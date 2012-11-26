@@ -1,0 +1,5 @@
+export(sl0)
+export(sl0solve)
+export(signal_gen)
+import(Rcpp)
+useDynLib(rsl0)

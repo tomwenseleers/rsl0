@@ -1,0 +1,19 @@
+Package: rsl0
+Type: Package
+Title: Sparse representation based on smoothed L0 norm (SL0)
+Version: 1.0
+Date: 2012-11-25
+Author: Braden M. Harbin
+Maintainer: Braden M. Harbin <bharbin@subzil.ch>
+Description: More about what it does (maybe more than one line)
+License: GPL
+Depends:
+    Rcpp (>= 0.10.0),
+    RcppArmadillo (>= 0.3.4.4)
+LinkingTo: Rcpp, RcppArmadillo
+RcppModules: sl0
+LazyLoad: yes
+Collate:
+    'signal_gen.R'
+    'sl0solve.R'
+    'zzz.r'
