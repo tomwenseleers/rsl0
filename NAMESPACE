@@ -1,5 +1,6 @@
 export(sl0)
 export(sl0solve)
 export(signal_gen)
+export(estSNR)
 import(Rcpp)
 useDynLib(rsl0)

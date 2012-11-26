@@ -5,15 +5,15 @@
   signal_gen(N, NZ, sigma_off, fixed.active)
 }
 \arguments{
-  \item{N}{N length of signal vector}
+  \item{N}{length of signal vector}
 
-  \item{NZ}{NZ sparsity (number of zeros)}
+  \item{NZ}{sparsity (number of zeros)}
 
-  \item{sigma_off}{sigma_off variance of gaussian noise
-  over the inactive components}
+  \item{sigma_off}{variance of gaussian noise over the
+  inactive components}
 
-  \item{fixed.active}{fixed.active fixed non-randomly
-  generated components}
+  \item{fixed.active}{fixed non-randomly generated
+  components}
 }
 \value{
   a numeric vector (s) which satisfies the equation A*s=x

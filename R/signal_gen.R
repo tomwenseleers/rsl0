@@ -1,10 +1,10 @@
 #' Generate a random sparse test signal s
 #' 
-#' @param N N length of signal vector
-#' @param NZ NZ sparsity (number of zeros)
-#' @param sigma_off sigma_off variance of gaussian noise over the
+#' @param N length of signal vector
+#' @param NZ sparsity (number of zeros)
+#' @param sigma_off variance of gaussian noise over the
 #'   inactive components
-#' @param fixed.active fixed.active fixed non-randomly generated
+#' @param fixed.active fixed non-randomly generated
 #'   components
 #' @return a numeric vector (s) which satisfies the equation A*s=x
 #' @keywords sparse vector

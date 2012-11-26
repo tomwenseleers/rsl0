@@ -19,7 +19,7 @@ A <- apply(A, 2, function(z) res <- z/sqrt(sum(abs(z)^2)))
 x <- A %*% true.s
 mu0 <- 2;
 
-s <- sl0solve(A, x, sigma_min, sigma_df, mu0, L, true.s)
+s <- sl0solve(A, x, sigma_min, sigma_df, mu0, L)
 
 print(err <- error.val(true.s,s))
 

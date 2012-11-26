@@ -17,3 +17,4 @@ Collate:
     'signal_gen.R'
     'sl0solve.R'
     'zzz.r'
+    'estSNR.R'

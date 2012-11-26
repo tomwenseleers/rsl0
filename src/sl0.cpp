@@ -1,6 +1,4 @@
 #include "sl0.h"
-#include "util.h"
-
 #include <RcppArmadillo.h>
 #include <iostream>
 
@@ -11,7 +9,7 @@ using namespace arma;
 
 arma::vec SL0(const arma::mat& A, const arma::vec& x, 
                       double sigma_min, double sigma_df, double mu0, 
-                      int L, const arma::vec& true_s) {
+                      int L) {
   
   int N = A.n_cols, M = A.n_rows;
   arma::mat A_pinv = arma::pinv(A);
@@ -20,15 +18,12 @@ arma::vec SL0(const arma::mat& A, const arma::vec& x,
   
   double sigma;
   sigma = 2.0 * arma::max(sqrt(s % s));
-  cout << "sigma_start = " << sigma << endl;
   while ( sigma > sigma_min ) {
     for (int ii = 0; ii < L; ii++) {  
       delta = Delta(s, sigma);
       s = s - mu0*delta;
       s = s - A_pinv*(A*s - x); 
     }
-     cout << "sigma = " << sigma << " " << "SNR = " << estSNR(s, true_s) << endl;
-     //cout << " error = " << arma::norm(true_s - s,2)/arma::norm(true_s,2) << " " << "norm(s) = " << arma::norm(s,2) << endl;
     sigma = sigma_df*sigma;
   }
                     
@@ -54,4 +49,5 @@ RCPP_MODULE(sl0){
        function( "SL0", &SL0, "Returns the sparsest vector s which \
                                  satisfies underdetermined system of \
                                  linear equations  A*s=x" ) ;
+      function( "estSNR", &estSNR, "Estimate SNR");
 }
